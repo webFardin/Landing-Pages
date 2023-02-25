@@ -1,0 +1,57 @@
+@import "https://fonts.googleapis.com/css?family=Quicksand";
+@import "https://fonts.googleapis.com/css?family=Pacifico";
+@import "https://fonts.googleapis.com/css?family=Source+Code+Pro";
+:root {
+  --background-color: #131418;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  font-size: 5vw;
+}
+
+body {
+  background: var(--background-color);
+  font-family: "Quicksand";
+  color: white;
+}
+
+.navbar-wrapper {
+  font-size: 0.3rem;
+  width: 85%;
+  height: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  user-select: none;
+}
+.navbar-wrapper .navbar {
+  display: flex;
+  font-weight: bold;
+}
+.navbar-wrapper .navbar .nav-item {
+  list-style: none;
+  cursor: pointer;
+  padding: 0.3rem 0.5rem;
+  transition: 0.3s;
+}
+.navbar-wrapper .navbar .nav-item:hover {
+  opacity: 0.9;
+}
+.navbar-wrapper .ip-box {
+  font-family: "Source Code Pro";
+  transform: translateY(0.02rem);
+}
+.navbar-wrapper .ip-box .ip-icon {
+  width: 0.2rem;
+  color: red;
+}
+
+/*# sourceMappingURL=style.css.map */
