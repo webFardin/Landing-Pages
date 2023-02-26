@@ -4,6 +4,9 @@
 
 :root {
   --background-color: #131418;
+  --christmas-color: #eb455f;
+  --christmas-color-darker: #e41145;
+  --selection-color: #00adb5;
 }
 
 * {
@@ -11,6 +14,8 @@
   padding: 0;
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
+
+  // border: 1px solid teal;
 }
 
 html {
@@ -21,10 +26,17 @@ body {
   background: var(--background-color);
   font-family: "Quicksand";
   color: white;
+  display: grid;
+  gap: 2rem;
+  user-select: none;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--selection-color);
 }
 
 .navbar-wrapper {
-  // border: 1px solid red;
   font-size: 0.3rem;
   width: 85%;
   height: 2rem;
@@ -32,33 +44,216 @@ body {
   justify-content: space-between;
   align-items: center;
   margin: auto;
-  user-select: none;
 
   .navbar {
     display: flex;
     font-weight: bold;
-    // border: 1px solid blue;
 
     .nav-item {
       list-style: none;
       cursor: pointer;
       padding: 0.3rem 0.5rem;
       transition: 0.3s;
-      // border: 1px solid white;
-      
+
       &:hover {
-        opacity: 0.9;
+        opacity: 0.8;
       }
     }
   }
 
   .ip-box {
-    font-family: 'Source Code Pro';
+    font-family: "Source Code Pro";
     transform: translateY(0.02rem);
 
     .ip-icon {
       width: 0.2rem;
       color: red;
+    }
+  }
+}
+
+.landing-page {
+  width: 85%;
+  height: 6rem;
+  margin: auto;
+  display: flex;
+  gap: 3rem;
+
+  .animations-wrapper {
+    width: 5rem;
+
+    > * {
+      position: absolute;
+    }
+
+    .astronaut-wrapper {
+      > * {
+        position: absolute;
+        width: 5rem;
+      }
+
+      .astronaut-img {
+        animation: astronaut-animation 5s ease-in-out infinite alternate;
+      }
+
+      @keyframes astronaut-animation {
+        100% {
+          transform: translateY(-0.3rem);
+        }
+      }
+
+      .star-img-1 {
+        animation: star-img-1 4s ease-in-out infinite alternate;
+      }
+
+      .star-img-2 {
+        animation: star-img-2 4s ease-in-out 1s infinite alternate;
+      }
+
+      .star-img-3 {
+        animation: star-img-3 4s ease-in-out 1.5s infinite alternate;
+      }
+
+      .star-img-4 {
+        animation: star-img-4 4s ease-in-out 2s infinite alternate;
+      }
+
+      @keyframes star-img-1 {
+        100% {
+          opacity: 0.1;
+        }
+      }
+
+      @keyframes star-img-2 {
+        100% {
+          opacity: 0.1;
+        }
+      }
+
+      @keyframes star-img-3 {
+        100% {
+          opacity: 0.1;
+        }
+      }
+
+      @keyframes star-img-4 {
+        100% {
+          opacity: 0.1;
+        }
+      }
+    }
+
+    .satellite-wrapper {
+      transform: translate(21rem, 0rem) rotate(30deg);
+      animation: satellite-move 100s linear infinite;
+      z-index: -999;
+
+      > * {
+        position: absolute;
+        width: 5rem;
+      }
+
+      @keyframes satellite-move {
+        100% {
+          transform: translate(1rem, -10rem) rotate(-25deg);
+        }
+      }
+
+      .signals-img {
+        width: 1.8rem;
+        transform: translate(-0.2rem, 3.25rem) rotate(233deg);
+
+        .signals-img-1 {
+          opacity: 0;
+          animation: signals-img-1 10s ease-in-out infinite;
+        }
+
+        .signals-img-2 {
+          opacity: 0;
+          animation: signals-img-2 10s ease-in-out 0.5s infinite;
+        }
+
+        .signals-img-3 {
+          opacity: 0;
+          animation: signals-img-3 10s ease-in-out 1s infinite;
+        }
+
+        @keyframes signals-img-1 {
+          35% {
+            opacity: 1;
+          }
+
+          50% {
+            opacity: 0;
+          }
+        }
+
+        @keyframes signals-img-2 {
+          35% {
+            opacity: 1;
+          }
+
+          50% {
+            opacity: 0;
+          }
+        }
+
+        @keyframes signals-img-3 {
+          35% {
+            opacity: 1;
+          }
+
+          50% {
+            opacity: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .landing-page-offer {
+    width: 6.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.3rem;
+    text-align: center;
+
+    .landing-offer-title {
+      font-size: 0.6rem;
+      font-weight: bold;
+      font-family: "Pacifico";
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .landing-offer-context {
+      font-size: 0.4rem;
+      font-weight: bold;
+    }
+
+    .christmas-color {
+      color: var(--christmas-color);
+    }
+
+    .landing-offer-btn {
+      font-family: "pacifico";
+      font-size: 0.4rem;
+      font-weight: bold;
+      padding: 0.2rem;
+      margin: 0.4rem auto 0 auto;
+      color: var(--christmas-color-darker);
+      border: 1px solid var(--christmas-color-darker);
+      border-radius: 1rem;
+      cursor: pointer;
+      transition: 1s;
+
+      &:hover {
+        background: var(--christmas-color-darker);
+        color: white;
+        box-shadow: 0rem 0rem 10rem 3rem var(--christmas-color-darker);
+      }
     }
   }
 }

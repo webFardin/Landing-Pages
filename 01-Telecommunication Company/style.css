@@ -3,6 +3,9 @@
 @import "https://fonts.googleapis.com/css?family=Source+Code+Pro";
 :root {
   --background-color: #131418;
+  --christmas-color: #eb455f;
+  --christmas-color-darker: #e41145;
+  --selection-color: #00adb5;
 }
 
 * {
@@ -20,6 +23,14 @@ body {
   background: var(--background-color);
   font-family: "Quicksand";
   color: white;
+  display: grid;
+  gap: 2rem;
+  user-select: none;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--selection-color);
 }
 
 .navbar-wrapper {
@@ -30,7 +41,6 @@ body {
   justify-content: space-between;
   align-items: center;
   margin: auto;
-  user-select: none;
 }
 .navbar-wrapper .navbar {
   display: flex;
@@ -43,7 +53,7 @@ body {
   transition: 0.3s;
 }
 .navbar-wrapper .navbar .nav-item:hover {
-  opacity: 0.9;
+  opacity: 0.8;
 }
 .navbar-wrapper .ip-box {
   font-family: "Source Code Pro";
@@ -52,6 +62,158 @@ body {
 .navbar-wrapper .ip-box .ip-icon {
   width: 0.2rem;
   color: red;
+}
+
+.landing-page {
+  width: 85%;
+  height: 6rem;
+  margin: auto;
+  display: flex;
+  gap: 3rem;
+}
+.landing-page .animations-wrapper {
+  width: 5rem;
+}
+.landing-page .animations-wrapper > * {
+  position: absolute;
+}
+.landing-page .animations-wrapper .astronaut-wrapper > * {
+  position: absolute;
+  width: 5rem;
+}
+.landing-page .animations-wrapper .astronaut-wrapper .astronaut-img {
+  animation: astronaut-animation 5s ease-in-out infinite alternate;
+}
+@keyframes astronaut-animation {
+  100% {
+    transform: translateY(-0.3rem);
+  }
+}
+.landing-page .animations-wrapper .astronaut-wrapper .star-img-1 {
+  animation: star-img-1 4s ease-in-out infinite alternate;
+}
+.landing-page .animations-wrapper .astronaut-wrapper .star-img-2 {
+  animation: star-img-2 4s ease-in-out 1s infinite alternate;
+}
+.landing-page .animations-wrapper .astronaut-wrapper .star-img-3 {
+  animation: star-img-3 4s ease-in-out 1.5s infinite alternate;
+}
+.landing-page .animations-wrapper .astronaut-wrapper .star-img-4 {
+  animation: star-img-4 4s ease-in-out 2s infinite alternate;
+}
+@keyframes star-img-1 {
+  100% {
+    opacity: 0.1;
+  }
+}
+@keyframes star-img-2 {
+  100% {
+    opacity: 0.1;
+  }
+}
+@keyframes star-img-3 {
+  100% {
+    opacity: 0.1;
+  }
+}
+@keyframes star-img-4 {
+  100% {
+    opacity: 0.1;
+  }
+}
+.landing-page .animations-wrapper .satellite-wrapper {
+  transform: translate(21rem, 0rem) rotate(30deg);
+  animation: satellite-move 100s linear infinite;
+  z-index: -999;
+}
+.landing-page .animations-wrapper .satellite-wrapper > * {
+  position: absolute;
+  width: 5rem;
+}
+@keyframes satellite-move {
+  100% {
+    transform: translate(1rem, -10rem) rotate(-25deg);
+  }
+}
+.landing-page .animations-wrapper .satellite-wrapper .signals-img {
+  width: 1.8rem;
+  transform: translate(-0.2rem, 3.25rem) rotate(233deg);
+}
+.landing-page .animations-wrapper .satellite-wrapper .signals-img .signals-img-1 {
+  opacity: 0;
+  animation: signals-img-1 10s ease-in-out infinite;
+}
+.landing-page .animations-wrapper .satellite-wrapper .signals-img .signals-img-2 {
+  opacity: 0;
+  animation: signals-img-2 10s ease-in-out 0.5s infinite;
+}
+.landing-page .animations-wrapper .satellite-wrapper .signals-img .signals-img-3 {
+  opacity: 0;
+  animation: signals-img-3 10s ease-in-out 1s infinite;
+}
+@keyframes signals-img-1 {
+  35% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+@keyframes signals-img-2 {
+  35% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+@keyframes signals-img-3 {
+  35% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+.landing-page .landing-page-offer {
+  width: 6.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.3rem;
+  text-align: center;
+}
+.landing-page .landing-page-offer .landing-offer-title {
+  font-size: 0.6rem;
+  font-weight: bold;
+  font-family: "Pacifico";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.landing-page .landing-page-offer .landing-offer-context {
+  font-size: 0.4rem;
+  font-weight: bold;
+}
+.landing-page .landing-page-offer .christmas-color {
+  color: var(--christmas-color);
+}
+.landing-page .landing-page-offer .landing-offer-btn {
+  font-family: "pacifico";
+  font-size: 0.4rem;
+  font-weight: bold;
+  padding: 0.2rem;
+  margin: 0.4rem auto 0 auto;
+  color: var(--christmas-color-darker);
+  border: 1px solid var(--christmas-color-darker);
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: 1s;
+}
+.landing-page .landing-page-offer .landing-offer-btn:hover {
+  background: var(--christmas-color-darker);
+  color: white;
+  box-shadow: 0rem 0rem 10rem 3rem var(--christmas-color-darker);
 }
 
 /*# sourceMappingURL=style.css.map */
